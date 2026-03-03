@@ -1,4 +1,5 @@
-using System.Diagnostics;
+using System;
+using System.Windows.Forms;
 
 namespace WinFormsApp2
 {
@@ -11,12 +12,12 @@ namespace WinFormsApp2
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var ps = new ProcessStartInfo("https://th.bing.com/th/id/OIP.AwSrxYWqKYWcj2FBreUz_AHaEx?w=263&h=180&c=7&r=0&o=7&pid=1.7&rm=3")
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
             {
-                UseShellExecute = true,
-                Verb = "open"
-            };
-            Process.Start(ps);
+                FileName = "https://th.bing.com/th/id/OIP.AwSrxYWqKYWcj2FBreUz_AHaEx?w=263&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+                UseShellExecute = true
+            });
+
         }
     }
 }
